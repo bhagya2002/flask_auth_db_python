@@ -12,12 +12,16 @@
 - main.py is the file that runs the web app
 - routes.py is the file that defines the routes (links to other pages)
 - templates folder is where all the html files will be stored
-- models.py is where all the database code will be stored
+- models.py is where all the database models (schema) will be stored
 - auth.py is where all the authentication code will be stored
 
 ## Jinja tips
 
 - {% %} is used to define a block of code (for loops, if statements, etc)
 - {% block <variable_name> %}...{% endblock %}, block is used when you want children to override the parents template using var defined
-- {{ }} some python expression that will be evaluated
+- {{ }} some python expression that will be evaluated and can be used to pass in variables
 - {% extends "base.html"%}, use base.html as ur base template and override blocks
+- {% if ...%}...{% elif ... %}...{% else %}...{% endif %}, this is how you write a if statement
+- basic http methods (requests made on page load or a action)
+  - Get: on page load, or retrieving information
+  - Post: some change to a db or change to state of website/system (sign in or sign up)
