@@ -42,6 +42,35 @@
       </div>
     </nav>
 
+    <!-- error/success message(s) -->
+    <!-- get the flashed messages from the request -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <!-- if there are messages: -->
+    {% if messages %}
+    <!-- loop through each message including its category -->
+    {% for category, message in messages %}
+    <!-- if the category is error -->
+    {% if category == "error" %}
+    <!-- error message(s) -->
+    <div class="alert alert-danger alert-dismissable fade show" role="alert">
+      {{ message }}
+      <button class="close" type="button" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% elif category == "success" %}
+    <!-- success message(s) -->
+    <div class="alert alert-success alert-dismissable fade show" role="alert">
+      {{ message }}
+      <button class="close" type="button" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <!-- content -->
+    <div class="container">{% block content %}{% endblock %}</div>
+
     <!-- JQurey, Bootstrap, and PopperJS -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
