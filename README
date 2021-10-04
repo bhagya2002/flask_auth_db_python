@@ -1,0 +1,16 @@
+# Inital Step
+
+1. install the following packages:
+   - pip3 install flask
+   - pip3 install flask-sqlalachemy
+   - pip3 install flask-login
+
+## Information and background in flask
+
+- when you create a folder called website (where all the code files are) this becomes a package (folder)
+- **init**.py is a file that initalizes the web app
+- main.py is the file that runs the web app
+- routes.py is the file that defines the routes (links to other pages)
+- templates folder is where all the html files will be stored
+- models.py is where all the database code will be stored
+- auth.py is where all the authentication code will be stored
