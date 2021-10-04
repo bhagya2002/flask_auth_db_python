@@ -14,3 +14,10 @@
 - templates folder is where all the html files will be stored
 - models.py is where all the database code will be stored
 - auth.py is where all the authentication code will be stored
+
+## Jinja tips
+
+- {% %} is used to define a block of code (for loops, if statements, etc)
+- {% block <variable_name> %}...{% endblock %}, block is used when you want children to override the parents template using var defined
+- {{ }} some python expression that will be evaluated
+- {% extends "base.html"%}, use base.html as ur base template and override blocks

@@ -1,0 +1,4 @@
+# necessary installs done quickly
+flask
+Flask-SQLAlchemy
+flask-login
