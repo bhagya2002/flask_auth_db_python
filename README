@@ -14,6 +14,8 @@
 - templates folder is where all the html files will be stored
 - models.py is where all the database models (schema) will be stored
 - auth.py is where all the authentication code will be stored
+- hashing function, a fucntion that does not have an inverse for itself (secure)
+  - can generate the same y with x, however, cannot go back to x from y
 
 ## Jinja tips
 
