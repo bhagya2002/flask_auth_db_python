@@ -72,7 +72,7 @@ def sign_up():
             new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)  # logging in this user
+            login_user(new_user, remember=True)  # logging in this user
             flash("Account created!", category="success")
             return redirect(url_for("routes.home"))
 
