@@ -1,4 +1,43 @@
 {% extends "base.html"%} {% block title %} Home {% endblock %} {% block content
 %}
-<h1>This is the home page</h1>
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in notes %}
+  <!-- <li class="list-group-item">
+    <div class="row">
+      <div class="col-md-8">
+        <h4>{{note.title}}</h4>
+        <p>{{note.content}}</p>
+      </div>
+      <div class="col-md-4">
+        <a href="{{url_for('edit_note', id=note.id)}}" class="btn btn-primary"
+          >Edit</a
+        >
+        <a href="{{url_for('delete_note', id=note.id)}}" class="btn btn-danger"
+          >Delete</a
+        >
+      </div>
+    </div>
+  </li> -->
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onclick="delete_note({{ note.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %} {% for not in user.notes %} {% endfor %}
+</ul>
+<form method="POST">
+  <textarea
+    name="note"
+    id=""
+    cols="30"
+    rows="10"
+    class="form-control"
+  ></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-secondary">Add Note</button>
+  </div>
+</form>
 {% endblock %}
